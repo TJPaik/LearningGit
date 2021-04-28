@@ -36,7 +36,7 @@ The key's randomart image is:
 # ssh -p 12345 abc@abc_ip -vv
 # ssh -p 12345 abc@abc_ip -vvv
 ```
-### in the server
+### And then, in the server,
 ```bash
 [abc@abc]$ cat ~/.ssh/authorized_keys_tmp >> ~/.ssh/authorized_keys
 # >> : append
