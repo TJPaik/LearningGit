@@ -47,3 +47,31 @@ The key's randomart image is:
 ## Github
 Go to `setting - SSH and GPG keys - New SSH key`  
 You can add your public rsa key.
+
+## Bitbucket
+After ssh-key generation, 
+```bash
+[abc@abc]$ eval 'ssh-agent'
+SSH_AUTH_SOCK=/tmp/ssh-~~~~~~/agent.~~~~~; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=~~~~~; export SSH_AGENT_PID;
+echo Agent pid ~~~~~;
+
+# ssh-add
+[abc@abc] ssh-add ~/.ssh/<private_key_file>
+Identity added: /home/abc/.ssh/id_rsa (/home/abc/.ssh/id_rsa)
+```
+Go to `personal settings - SSH Keys - Add key`.
+```bash
+# Verify your configuration and username by entering the following command:
+[abc@abc] ssh -T git@bitbucket.org
+The authenticity of host 'bitbucket.org (~.~.~.~)' can't be established.
+RSA key fingerprint is SHA256:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+Are you sure you want to continue connecting (yes/no)? yes
+
+Warning: Permanently added 'bitbucket.org,~.~.~.~' (RSA) to the list of known hosts.
+logged in as abc
+```
+[reference (support.atlassian.com)](https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/)
+
+
+
